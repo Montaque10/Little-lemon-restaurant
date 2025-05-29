@@ -1,0 +1,56 @@
+
+:root {
+  --primary-color: #495e57;
+  --accent-color: #f4ce14;
+  --bg-color: #fff;
+  --text-color: #333;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --font-family: 'Poppins', sans-serif;
+}
+
+.confirmation-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #fefefe;
+  height: 100vh;
+}
+
+.confirmation-section {
+  max-width: 600px;
+  width: 100%;
+}
+
+.confirmation-box {
+  background-color: var(--bg-color);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: popUp 0.6s ease-in-out;
+}
+
+.confirmation-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.confirmation-message {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

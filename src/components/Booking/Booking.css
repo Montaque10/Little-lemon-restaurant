@@ -1,0 +1,84 @@
+
+:root {
+  --dark-bg: #1b1b1b;
+  --card-bg: #2a2a2a;
+  --primary-yellow: #f4ce14;
+  --light-text: #ffffff;
+  --muted-text: #cccccc;
+  --border-radius: 12px;
+}
+
+.booking-section {
+  background-color: var(--card-bg);
+  color: var(--light-text);
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(244, 206, 20, 0.1);
+}
+
+.booking-title {
+  color: var(--primary-yellow);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+}
+
+.booking-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--primary-yellow);
+  margin: 1rem auto 0;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group label {
+  color: var(--muted-text);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--light-text);
+  padding: 12px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-yellow);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(244, 206, 20, 0.2);
+}
+
+button[type="submit"] {
+  background-color: var(--primary-yellow);
+  color: var(--dark-bg);
+  font-weight: 700;
+  padding: 12px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #e6c013;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .booking-section {
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+}
