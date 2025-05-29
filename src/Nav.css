@@ -1,0 +1,128 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-yellow: #f4ce14;
+  --dark-bg: #1b1b1b;
+  --light-text: #ffffff;
+  --transition-speed: 0.3s;
+  --font-main: 'Karla', sans-serif;
+}
+
+
+.navbar {
+  background-color: var(--dark-bg);
+  border-bottom: 3px solid var(--primary-yellow);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  font-family: var(--font-main);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+.navbar-logo {
+  width: 200px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.navbar-logo img {
+  width: 100%;
+  height: auto;
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  position: relative;
+}
+
+.navbar-link {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+}
+
+.navbar-link:hover {
+  color: var(--primary-yellow);
+}
+
+
+.navbar-item.active .navbar-link {
+  color: var(--primary-yellow);
+  font-weight: 700;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-yellow);
+  transition: width var(--transition-speed) ease;
+}
+
+.navbar-link:hover::after,
+.navbar-item.active .navbar-link::after {
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar-logo {
+    width: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
